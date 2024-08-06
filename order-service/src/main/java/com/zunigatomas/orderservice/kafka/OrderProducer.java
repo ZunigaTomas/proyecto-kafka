@@ -11,9 +11,9 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 @Service
 public class OrderProducer {
-    private final static Logger LOGGER = LoggerFactory.getLogger(OrderProducer.class);
-    private NewTopic topic;
-    private KafkaTemplate<String, OrderEvent> kafkaTemplate;
+    private static final Logger LOGGER = LoggerFactory.getLogger(OrderProducer.class);
+    private final NewTopic topic;
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
     public OrderProducer(NewTopic topic, KafkaTemplate<String, OrderEvent> kafkaTemplate) {
         this.topic = topic;
